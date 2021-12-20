@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+//        Text("Hello, world!")
+//            .padding()
+        
+        SampleView(store: Store<CustomState, CustomAction>(initialState: .init(),
+                                                                 reducer: customReducer,
+                                                                 environment: .init()))
     }
 }
 
