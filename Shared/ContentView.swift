@@ -13,9 +13,24 @@ struct ContentView: View {
 //        Text("Hello, world!")
 //            .padding()
         
-        SampleView(store: Store<CustomState, CustomAction>(initialState: .init(),
-                                                                 reducer: customReducer,
-                                                                 environment: .init()))
+        NavigationView {
+            List {
+                NavigationLink("Sample 1") {
+                    SampleView(store: Store<CustomState, CustomAction>(initialState: .init(),
+                                                                             reducer: customReducer,
+                                                                             environment: .init()))
+                }
+                
+                NavigationLink("Counter") {
+                    CounterView(store: .init(initialState: CounterState(),
+                                             reducer: counterReducer,
+                                             environment: .init()))
+                }
+            }
+            .navigationTitle("TCA Sample List")
+ 
+        }
+        
     }
 }
 

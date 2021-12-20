@@ -20,6 +20,8 @@
 		3318026E2770825A00F6F58D /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 3318026D2770825A00F6F58D /* ComposableArchitecture */; };
 		331802702770826F00F6F58D /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3318026F2770826F00F6F58D /* SampleView.swift */; };
 		331802712770826F00F6F58D /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3318026F2770826F00F6F58D /* SampleView.swift */; };
+		331802732770A4E100F6F58D /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331802722770A4E100F6F58D /* Counter.swift */; };
+		331802742770A4E100F6F58D /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331802722770A4E100F6F58D /* Counter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,7 @@
 		33180254277081AD00F6F58D /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		33180256277081AD00F6F58D /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		3318026F2770826F00F6F58D /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
+		331802722770A4E100F6F58D /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,7 @@
 				33180230277081AC00F6F58D /* SampleAppOfTCAApp.swift */,
 				33180231277081AC00F6F58D /* ContentView.swift */,
 				3318026F2770826F00F6F58D /* SampleView.swift */,
+				331802722770A4E100F6F58D /* Counter.swift */,
 				33180232277081AD00F6F58D /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -311,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				331802732770A4E100F6F58D /* Counter.swift in Sources */,
 				3318025A277081AD00F6F58D /* ContentView.swift in Sources */,
 				331802702770826F00F6F58D /* SampleView.swift in Sources */,
 				33180258277081AD00F6F58D /* SampleAppOfTCAApp.swift in Sources */,
@@ -321,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				331802742770A4E100F6F58D /* Counter.swift in Sources */,
 				3318025B277081AD00F6F58D /* ContentView.swift in Sources */,
 				331802712770826F00F6F58D /* SampleView.swift in Sources */,
 				33180259277081AD00F6F58D /* SampleAppOfTCAApp.swift in Sources */,
