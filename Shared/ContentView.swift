@@ -26,6 +26,12 @@ struct ContentView: View {
                                              reducer: counterReducer,
                                              environment: .init()))
                 }
+                
+                NavigationLink("Two Counters") {
+                    TwoCountersView(store: .init(initialState: TwoCountersState(), reducer: twoCountersReducer, environment: TwoCountersEnvironment()))
+                    
+                }
+                
             }
             .navigationTitle("TCA Sample List")
  
@@ -37,5 +43,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environment(\.colorScheme, .dark)
     }
 }
