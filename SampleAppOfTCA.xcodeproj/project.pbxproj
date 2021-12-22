@@ -13,17 +13,21 @@
 		33180257277081AD00F6F58D /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33180256277081AD00F6F58D /* Tests_macOSLaunchTests.swift */; };
 		33180258277081AD00F6F58D /* SampleAppOfTCAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33180230277081AC00F6F58D /* SampleAppOfTCAApp.swift */; };
 		33180259277081AD00F6F58D /* SampleAppOfTCAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33180230277081AC00F6F58D /* SampleAppOfTCAApp.swift */; };
-		3318025A277081AD00F6F58D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33180231277081AC00F6F58D /* ContentView.swift */; };
-		3318025B277081AD00F6F58D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33180231277081AC00F6F58D /* ContentView.swift */; };
+		3318025A277081AD00F6F58D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33180231277081AC00F6F58D /* RootView.swift */; };
+		3318025B277081AD00F6F58D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33180231277081AC00F6F58D /* RootView.swift */; };
 		3318025C277081AD00F6F58D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33180232277081AD00F6F58D /* Assets.xcassets */; };
 		3318025D277081AD00F6F58D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33180232277081AD00F6F58D /* Assets.xcassets */; };
 		3318026E2770825A00F6F58D /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 3318026D2770825A00F6F58D /* ComposableArchitecture */; };
-		331802702770826F00F6F58D /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3318026F2770826F00F6F58D /* SampleView.swift */; };
-		331802712770826F00F6F58D /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3318026F2770826F00F6F58D /* SampleView.swift */; };
+		331802702770826F00F6F58D /* Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3318026F2770826F00F6F58D /* Custom.swift */; };
+		331802712770826F00F6F58D /* Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3318026F2770826F00F6F58D /* Custom.swift */; };
 		331802732770A4E100F6F58D /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331802722770A4E100F6F58D /* Counter.swift */; };
 		331802742770A4E100F6F58D /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331802722770A4E100F6F58D /* Counter.swift */; };
 		3320231F2770D35F0031BAC8 /* TwoCounters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3320231E2770D35F0031BAC8 /* TwoCounters.swift */; };
 		332023202770D35F0031BAC8 /* TwoCounters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3320231E2770D35F0031BAC8 /* TwoCounters.swift */; };
+		33B93D882771DE7E0039FA9E /* OptionalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B93D872771DE7D0039FA9E /* OptionalState.swift */; };
+		33B93D892771DE7E0039FA9E /* OptionalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B93D872771DE7D0039FA9E /* OptionalState.swift */; };
+		33B93D8B2773385D0039FA9E /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B93D8A2773385D0039FA9E /* Core.swift */; };
+		33B93D8C2773385D0039FA9E /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B93D8A2773385D0039FA9E /* Core.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +49,7 @@
 
 /* Begin PBXFileReference section */
 		33180230277081AC00F6F58D /* SampleAppOfTCAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAppOfTCAApp.swift; sourceTree = "<group>"; };
-		33180231277081AC00F6F58D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		33180231277081AC00F6F58D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		33180232277081AD00F6F58D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33180237277081AD00F6F58D /* SampleAppOfTCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleAppOfTCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3318023D277081AD00F6F58D /* SampleAppOfTCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleAppOfTCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,9 +60,11 @@
 		33180250277081AD00F6F58D /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33180254277081AD00F6F58D /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		33180256277081AD00F6F58D /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
-		3318026F2770826F00F6F58D /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
+		3318026F2770826F00F6F58D /* Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom.swift; sourceTree = "<group>"; };
 		331802722770A4E100F6F58D /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		3320231E2770D35F0031BAC8 /* TwoCounters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoCounters.swift; sourceTree = "<group>"; };
+		33B93D872771DE7D0039FA9E /* OptionalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalState.swift; sourceTree = "<group>"; };
+		33B93D8A2773385D0039FA9E /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,10 +115,12 @@
 			isa = PBXGroup;
 			children = (
 				33180230277081AC00F6F58D /* SampleAppOfTCAApp.swift */,
-				33180231277081AC00F6F58D /* ContentView.swift */,
-				3318026F2770826F00F6F58D /* SampleView.swift */,
+				33B93D8A2773385D0039FA9E /* Core.swift */,
+				33180231277081AC00F6F58D /* RootView.swift */,
+				3318026F2770826F00F6F58D /* Custom.swift */,
 				331802722770A4E100F6F58D /* Counter.swift */,
 				3320231E2770D35F0031BAC8 /* TwoCounters.swift */,
+				33B93D872771DE7D0039FA9E /* OptionalState.swift */,
 				33180232277081AD00F6F58D /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -321,9 +329,11 @@
 			files = (
 				331802732770A4E100F6F58D /* Counter.swift in Sources */,
 				3320231F2770D35F0031BAC8 /* TwoCounters.swift in Sources */,
-				3318025A277081AD00F6F58D /* ContentView.swift in Sources */,
-				331802702770826F00F6F58D /* SampleView.swift in Sources */,
+				3318025A277081AD00F6F58D /* RootView.swift in Sources */,
+				33B93D8B2773385D0039FA9E /* Core.swift in Sources */,
+				331802702770826F00F6F58D /* Custom.swift in Sources */,
 				33180258277081AD00F6F58D /* SampleAppOfTCAApp.swift in Sources */,
+				33B93D882771DE7E0039FA9E /* OptionalState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,9 +343,11 @@
 			files = (
 				331802742770A4E100F6F58D /* Counter.swift in Sources */,
 				332023202770D35F0031BAC8 /* TwoCounters.swift in Sources */,
-				3318025B277081AD00F6F58D /* ContentView.swift in Sources */,
-				331802712770826F00F6F58D /* SampleView.swift in Sources */,
+				3318025B277081AD00F6F58D /* RootView.swift in Sources */,
+				33B93D8C2773385D0039FA9E /* Core.swift in Sources */,
+				331802712770826F00F6F58D /* Custom.swift in Sources */,
 				33180259277081AD00F6F58D /* SampleAppOfTCAApp.swift in Sources */,
+				33B93D892771DE7E0039FA9E /* OptionalState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

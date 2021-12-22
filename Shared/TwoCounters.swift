@@ -48,14 +48,23 @@ struct TwoCountersView : View {
     let store: Store<TwoCountersState, TwoCountersAction>
     
     var body: some View {
-        VStack {
-            CounterView(store: .init(initialState: CounterState(),
-                                     reducer: counterReducer,
-                                     environment: .init()))
-            CounterView(store: .init(initialState: CounterState(),
-                                     reducer: counterReducer,
-                                     environment: .init()))
+        WithViewStore(self.store) { viewStore in
+            VStack {
+                CounterView(
+                  store: self.store.scope(state: \.counter1, action: TwoCountersAction.counter1)
+                )
+                CounterView(
+                  store: self.store.scope(state: \.counter2, action: TwoCountersAction.counter2)
+                )
+//                CounterView(store: .init(initialState: viewStore.counter1,
+//                                         reducer: counterReducer,
+//                                         environment: .init()))
+//                CounterView(store: .init(initialState: viewStore.counter2,
+//                                         reducer: counterReducer,
+//                                         environment: .init()))
+            }
         }
+
     }
 }
 

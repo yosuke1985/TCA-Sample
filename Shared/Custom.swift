@@ -90,7 +90,7 @@ let customReducer = Reducer<CustomState, CustomAction, CustomEnvironment> {
 
 // View
 
-struct SampleView: View {
+struct CustomView: View {
     let store: Store<CustomState, CustomAction>
     @State var flag = false
     
@@ -127,7 +127,8 @@ struct SampleView: View {
                     
                     Text("\(viewStore.inputText)")
                     
-                    TextField("Type here", text: viewStore.binding(get: \.inputText, send: CustomAction.inputTextField))
+                    TextField("Type here",
+                              text: viewStore.binding(get: \.inputText, send: CustomAction.inputTextField))
                         .padding()
                 }
                 .disabled(viewStore.toggleBool)
@@ -160,7 +161,7 @@ struct SampleView: View {
     }
 }
 
-struct SampleView_Previews: PreviewProvider {
+struct CustomView_Previews: PreviewProvider {
   static var previews: some View {
     NavigationView {
 //      BindingBasicsView(
@@ -171,7 +172,7 @@ struct SampleView_Previews: PreviewProvider {
 //        )
 //      )
         
-        SampleView(store: Store<CustomState, CustomAction>(initialState: .init(),
+        CustomView(store: Store<CustomState, CustomAction>(initialState: .init(),
                                                                  reducer: customReducer,
                                                                  environment: .init()))
     }

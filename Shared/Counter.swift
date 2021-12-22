@@ -36,7 +36,7 @@ struct CounterEnvironment {
 //public struct Reducer<State, Action, Environment> {
 
 
-let counterReducer = Reducer<CounterState, CounterAction,CounterEnvironment> {state, action, env in
+let counterReducer = Reducer<CounterState, CounterAction,CounterEnvironment> { state, action, env in
     
     switch action {
     case .incrementButtonTapped:
