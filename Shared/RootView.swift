@@ -35,12 +35,12 @@ struct RootView: View {
                         
                     }
                     
-//                    NavigationLink("Optional Counters") {
-//                        OptionalStateView(store:
-//                                            self.store.scope(state: \.optional, action: RootAction.optional)
-//                        )
-//                        
-//                    }
+                    NavigationLink("Optional Counters") {
+                        OptionalStateView(store:
+                                            self.store.scope(state: \.optional, action: RootAction.optional)
+                        )
+
+                    }
                     
                 }
                 .navigationTitle("TCA Sample List")

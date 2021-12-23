@@ -13,7 +13,7 @@ import ComposableArchitecture
 
 // State
 struct OptionalState: Equatable {
-    var counter: CounterState? = nil
+    var counter: CounterState?
 }
 
 // Action
@@ -44,6 +44,9 @@ let optionalStateReducer = Reducer<OptionalState, OptionalAction, OptionalEnv> {
         return .none
     }
 }
+    .combined(with: counterReducer
+                .optional()
+                .pullback(state: \.counter, action: /OptionalAction.optionalCounter, environment: { _ in CounterEnvironment() }))
 
 // View
 
