@@ -16,7 +16,7 @@ struct RootView: View {
         WithViewStore(self.store.stateless) { viewStore in
             NavigationView {
                 List {
-                    NavigationLink("Sample 1") {
+                    NavigationLink("Custom") {
                         CustomView(store: self.store.scope(state: \.custom, action: RootAction.custom))
                     }
                     

@@ -6,8 +6,6 @@
 //
 
 import Foundation
-
-import Foundation
 import SwiftUI
 import ComposableArchitecture
 
@@ -46,7 +44,9 @@ let optionalStateReducer = Reducer<OptionalState, OptionalAction, OptionalEnv> {
 }
     .combined(with: counterReducer
                 .optional()
-                .pullback(state: \.counter, action: /OptionalAction.optionalCounter, environment: { _ in CounterEnvironment() }))
+                .pullback(state: \OptionalState.counter,
+                          action: /OptionalAction.optionalCounter,
+                          environment: { _ in CounterEnvironment() }))
 
 // View
 

@@ -55,19 +55,19 @@ let rootReducer: Reducer<RootState, RootAction, RootEnvironment> = Reducer<RootS
         })
 
         ,
-        customReducer.pullback(state: \.custom,
+        customReducer.pullback(state: \RootState.custom,
                                action: /RootAction.custom,
                                environment: {_ in .init() }),
 
-        counterReducer.pullback(state: \.counter,
+        counterReducer.pullback(state: \RootState.counter,
                                 action: /RootAction.counter,
                                 environment: {_ in .init() }),
 
-        twoCountersReducer.pullback(state: \.twoCounters,
+        twoCountersReducer.pullback(state: \RootState.twoCounters,
                                     action: /RootAction.twoCounters,
                                     environment: {_ in .init() }),
 
-        optionalStateReducer.pullback(state: \.optional,
+        optionalStateReducer.pullback(state: \RootState.optional,
                                       action: /RootAction.optional,
                                       environment: {_ in .init() })
         

@@ -56,12 +56,6 @@ struct TwoCountersView : View {
                 CounterView(
                   store: self.store.scope(state: \.counter2, action: TwoCountersAction.counter2)
                 )
-//                CounterView(store: .init(initialState: viewStore.counter1,
-//                                         reducer: counterReducer,
-//                                         environment: .init()))
-//                CounterView(store: .init(initialState: viewStore.counter2,
-//                                         reducer: counterReducer,
-//                                         environment: .init()))
             }
         }
 
