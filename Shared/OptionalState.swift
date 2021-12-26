@@ -51,7 +51,7 @@ let optionalStateReducer = Reducer<OptionalState, OptionalAction, OptionalEnv> {
 // View
 
 struct OptionalStateView : View {
-
+    
     // public final class Store<State, Action>
     let store: Store<OptionalState, OptionalAction>
     
@@ -60,22 +60,16 @@ struct OptionalStateView : View {
             
             VStack {
 
-                
-                
-                IfLetStore(self.store.scope(state: \.counter, action: OptionalAction.optionalCounter),
+                IfLetStore(self.store.scope(state: \.counter,
+                                            action: OptionalAction.optionalCounter),
                            then: { store in
-                                CounterView(store: store)
-                            },
+                    CounterView(store: store)
+                },
                            else: {
-                                Text(template: "`CounterState` is `nil`", .body)
-                    
+                    Text(template: "`CounterState` is `nil`", .body)
                 }
                 )
                 
-                
-                
-
-
                 Button {
                     viewStore.send(.toggleOptionalCounter)
                 } label: {
@@ -90,73 +84,73 @@ struct OptionalStateView : View {
 
 
 struct OptionalStateView_Previews: PreviewProvider {
-  static var previews: some View {
-    NavigationView {
-        OptionalStateView(store: .init(initialState: .init(),
-                                       reducer: optionalStateReducer,
-                                       environment: OptionalEnv())
-        
-        )
+    static var previews: some View {
+        NavigationView {
+            OptionalStateView(store: .init(initialState: .init(),
+                                           reducer: optionalStateReducer,
+                                           environment: OptionalEnv())
+                              
+            )
+        }
     }
-  }
 }
 
 import SwiftUI
 
 extension Text {
-  init(template: String, _ style: Font.TextStyle) {
-    enum Style: Hashable {
-      case code
-      case emphasis
-      case strong
-    }
-
-    var segments: [Text] = []
-    var currentValue = ""
-    var currentStyles: Set<Style> = []
-
-    func flushSegment() {
-      var text = Text(currentValue)
-      if currentStyles.contains(.code) {
-        text = text.font(.system(style, design: .monospaced))
-      }
-      if currentStyles.contains(.emphasis) {
-        text = text.italic()
-      }
-      if currentStyles.contains(.strong) {
-        text = text.bold()
-      }
-      segments.append(text)
-      currentValue.removeAll()
-    }
-
-    for character in template {
-      switch character {
-      case "*":
+    init(template: String, _ style: Font.TextStyle) {
+        enum Style: Hashable {
+            case code
+            case emphasis
+            case strong
+        }
+        
+        var segments: [Text] = []
+        var currentValue = ""
+        var currentStyles: Set<Style> = []
+        
+        func flushSegment() {
+            var text = Text(currentValue)
+            if currentStyles.contains(.code) {
+                text = text.font(.system(style, design: .monospaced))
+            }
+            if currentStyles.contains(.emphasis) {
+                text = text.italic()
+            }
+            if currentStyles.contains(.strong) {
+                text = text.bold()
+            }
+            segments.append(text)
+            currentValue.removeAll()
+        }
+        
+        for character in template {
+            switch character {
+            case "*":
+                flushSegment()
+                currentStyles.toggle(.strong)
+            case "_":
+                flushSegment()
+                currentStyles.toggle(.emphasis)
+            case "`":
+                flushSegment()
+                currentStyles.toggle(.code)
+            default:
+                currentValue.append(character)
+            }
+        }
         flushSegment()
-        currentStyles.toggle(.strong)
-      case "_":
-        flushSegment()
-        currentStyles.toggle(.emphasis)
-      case "`":
-        flushSegment()
-        currentStyles.toggle(.code)
-      default:
-        currentValue.append(character)
-      }
+        
+        self = segments.reduce(Text(""), +)
     }
-    flushSegment()
-
-    self = segments.reduce(Text(""), +)
-  }
 }
 
 extension Set {
-  fileprivate mutating func toggle(_ element: Element) {
-    if self.contains(element) {
-      self.remove(element)
-    } else {
-      self.insert(element)
+    fileprivate mutating func toggle(_ element: Element) {
+        if self.contains(element) {
+            self.remove(element)
+        } else {
+            self.insert(element)
+        }
     }
-  }
 }

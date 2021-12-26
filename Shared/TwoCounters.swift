@@ -51,10 +51,12 @@ struct TwoCountersView : View {
         WithViewStore(self.store) { viewStore in
             VStack {
                 CounterView(
-                  store: self.store.scope(state: \.counter1, action: TwoCountersAction.counter1)
+                  store: self.store.scope(state: \TwoCountersState.counter1,
+                                          action: TwoCountersAction.counter1)
                 )
                 CounterView(
-                  store: self.store.scope(state: \.counter2, action: TwoCountersAction.counter2)
+                  store: self.store.scope(state: \TwoCountersState.counter2,
+                                          action: TwoCountersAction.counter2)
                 )
             }
         }
