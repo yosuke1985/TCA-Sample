@@ -14,6 +14,7 @@ import ComposableArchitecture
 struct TwoCountersState: Equatable {
     var counter1: CounterState = CounterState()
     var counter2: CounterState = CounterState()
+    var customState = CustomState()
 }
 
 // Action
@@ -21,6 +22,7 @@ struct TwoCountersState: Equatable {
 enum TwoCountersAction {
     case counter1(CounterAction)
     case counter2(CounterAction)
+    case custom(CustomAction)
 }
 
 // Environment

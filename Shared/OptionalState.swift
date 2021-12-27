@@ -31,7 +31,21 @@ struct OptionalEnv {}
 let optionalStateReducer = Reducer<OptionalState, OptionalAction, OptionalEnv> { state, action, env in
     
     switch action {
-    case .optionalCounter(let action):
+    case .optionalCounter(let cAction):
+//        switch cAction {
+//
+//        case .incrementButtonTapped:
+//            state.counter?.counter.count += 1
+////            state.counter.count += 1
+//
+//            return .none
+//
+//        case .decrementButtonTapped:
+//            state.counter?.counter.count -= 1
+////            state.counter.count -= 1
+//
+//            return .none
+//        }
         
         return .none
         
@@ -42,11 +56,13 @@ let optionalStateReducer = Reducer<OptionalState, OptionalAction, OptionalEnv> {
         return .none
     }
 }
-    .combined(with: counterReducer
+    .combined(with:
+                counterReducer
                 .optional()
                 .pullback(state: \OptionalState.counter,
                           action: /OptionalAction.optionalCounter,
-                          environment: { _ in CounterEnvironment() }))
+                          environment: { _ in CounterEnvironment() })
+    )
 
 // View
 
@@ -59,7 +75,7 @@ struct OptionalStateView : View {
         WithViewStore(self.store) { viewStore in
             
             VStack {
-
+                
                 IfLetStore(self.store.scope(state: \.counter,
                                             action: OptionalAction.optionalCounter),
                            then: { store in
