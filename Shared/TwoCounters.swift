@@ -41,7 +41,10 @@ let twoCountersReducer = Reducer<TwoCountersState, TwoCountersAction,TwoCounters
         ,
         counterReducer.pullback(state: \TwoCountersState.counter2,
                                           action: /TwoCountersAction.counter2,
-                                          environment: { _ in CounterEnvironment() } )
+                                          environment: { _ in CounterEnvironment() } ),
+        customReducer.pullback(state: \TwoCountersState.customState,
+                               action: /TwoCountersAction.custom,
+                               environment: { _ in CustomEnvironment() })
     )
 
 struct TwoCountersView : View {
@@ -59,6 +62,11 @@ struct TwoCountersView : View {
                 CounterView(
                   store: self.store.scope(state: \TwoCountersState.counter2,
                                           action: TwoCountersAction.counter2)
+                )
+                
+                CustomView(store:
+                            self.store.scope(state: \TwoCountersState.customState,
+                                             action: TwoCountersAction.custom)
                 )
             }
         }
