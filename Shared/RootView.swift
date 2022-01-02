@@ -17,6 +17,7 @@ struct RootState {
     var counter = CounterState()
     var twoCounters = TwoCountersState()
     var optional = OptionalState()
+    var shared = SharedState()
 }
 
 enum RootAction {
@@ -24,6 +25,7 @@ enum RootAction {
     case counter(CounterAction)
     case twoCounters(TwoCountersAction)
     case optional(OptionalAction)
+    case shared(SharedAction)
     case onAppear
 }
 
@@ -70,7 +72,11 @@ let rootReducer: Reducer<RootState, RootAction, RootEnvironment> = Reducer<RootS
 
         optionalStateReducer.pullback(state: \RootState.optional,
                                       action: /RootAction.optional,
-                                      environment: {_ in .init() })
+                                      environment: {_ in .init() }),
+        
+        sharedStateReducer.pullback(state: \RootState.shared,
+                                    action: /RootAction.shared,
+                                    environment: {_ in .init() })
         
     )
 
@@ -105,6 +111,13 @@ struct RootView: View {
                     NavigationLink("Optional Counters") {
                         OptionalStateView(store:
                                             self.store.scope(state: \RootState.optional, action: RootAction.optional)
+                        )
+
+                    }
+                    
+                    NavigationLink("Shared States") {
+                        SharedStateView(store:
+                                            self.store.scope(state: \RootState.shared, action: RootAction.shared)
                         )
 
                     }
